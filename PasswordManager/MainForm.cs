@@ -21,5 +21,16 @@ namespace PasswordManager
         {
 
         }
+
+        private void btnNewPassword_Click(object sender, EventArgs e)
+        {
+            using(var addForm = new addForm())
+            {
+                if(addForm.ShowDialog() == DialogResult.OK)
+                {
+                    // Yeni şifre eklendiğinde yapılacak işlemler
+                }
+            }
+        }
     }
 }
