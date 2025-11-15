@@ -16,8 +16,9 @@ Securely store your passwords, usernames, websites, and notes. Passwords are enc
 ---
 
 ## Screenshots
-![MainForm](screenshots/mainform.png)
-![AddForm](screenshots/addform.png)
+![MainForm UI](Screenshots/MainForm.jpg)
+![AddForm UI](Screenshots/AddForm.jpg)
+![AddForm Update UI](Screenshots/AddForm-Update.jpg)
 
 ---
 
