@@ -57,7 +57,7 @@ namespace PasswordManager
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            mtxtPassword.Text = passwordService.GenerateRandomPassword(20);
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -79,11 +79,20 @@ namespace PasswordManager
 
                 if (IsEditMode)
                 {
-                    EditingItem.Platform = platform;
-                    EditingItem.Username = username;
-                    EditingItem.Password = encryptedPassword;
-                    EditingItem.Notes = notes;
+                    int index = items.FindIndex(x =>
+                    x.Platform == EditingItem.Platform &&
+                    x.Username == EditingItem.Username &&
+                    x.Password == EditingItem.Password
+                );
+
+                if (index >= 0)
+                {
+                    items[index].Platform = platform;
+                    items[index].Username = username;
+                    items[index].Password = encryptedPassword;
+                    items[index].Notes = notes;
                 }
+            }
 
                 else
                 {
@@ -98,13 +107,23 @@ namespace PasswordManager
                 }
 
                 Storage.Save(items);
-
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred while saving the password: " + ex.Message);
             }
+        }
+
+        private void btnGenerate_Click_1(object sender, EventArgs e)
+        {
+            mtxtPassword.Text = passwordService.GenerateRandomPassword(20);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
