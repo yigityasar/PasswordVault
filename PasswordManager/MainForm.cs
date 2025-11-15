@@ -15,10 +15,27 @@ namespace PasswordManager
         public MainForm()
         {
             InitializeComponent();
+            this.Load += MainForm_Load;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(listBox1.SelectedIndex < 0)  return;
+
+            var items = Storage.LoadPasswords();
+            var selectedItem = items[listBox1.SelectedIndex];
+
+            using(var editForm = new addForm())
+            {
+                editForm.EditingItem = selectedItem;
+
+                if(editForm.ShowDialog() == DialogResult.OK)
+                {
+                    RefreshPasswordList();
+                }
+            }
+
+
 
         }
 
@@ -28,9 +45,28 @@ namespace PasswordManager
             {
                 if(addForm.ShowDialog() == DialogResult.OK)
                 {
-                    // Yeni şifre eklendiğinde yapılacak işlemler
+                    RefreshPasswordList();
                 }
             }
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            RefreshPasswordList();
+        }
+
+        private void RefreshPasswordList()
+        {
+            listBox1.Items.Clear();
+
+            var items = Storage.LoadPasswords();
+
+            foreach (var item in items)
+            {
+                listBox1.Items.Add(item.Platform);
+            }
+        }
+
+       
     }
 }
