@@ -16,21 +16,40 @@ Securely store your passwords, usernames, websites, and notes. Passwords are enc
 ---
 
 ## Screenshots
-![MainForm UI](Screenshots/MainForm.jpg)
-![AddForm UI](Screenshots/AddForm.jpg)
-![AddForm Update UI](Screenshots/AddForm-Update.jpg)
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="Screenshots/MainForm.jpg" alt="PasswordVault MainForm UI" width="400"/><br/>
+      PasswordVault | MainForm UI
+    </td>
+  </tr>
+</table>
 
----
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="Screenshots/AddForm.jpg" alt="PasswordVault AddForm UI" width="400"/><br/>
+      PasswordVault | AddForm UI
+    </td>
+    <td align="center">
+      <img src="Screenshots/AddForm-Update.jpg" alt="PasswordVault AddForm Update UI" width="400"/><br/>
+      PasswordVault | AddForm Update UI
+    </td>
+  </tr>
+</table>
 
-## Download
-Download the latest release here: [Add download link when ready]
+
+
+
 
 ---
 
 ## Installation
-1. Download the `.exe` file from the release link
-2. Run the application (no installation needed)
-3. Start managing your passwords securely
+1. Download the `setup.exe` file from the [Release page](https://github.com/yigityasar/PasswordVault/releases/download/v1.0/setup.exe)
+2. Run the `setup.exe` to install PasswordVault
+3. During installation, a desktop shortcut and Start Menu entry will be created
+4. Launch PasswordVault from the desktop or Start Menu and start managing your passwords securely
+
 
 ---
 
